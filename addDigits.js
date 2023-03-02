@@ -10,21 +10,22 @@
 // Since 2 has only one digit, return it.
 
 var addDigits = function(num) {
-    // Split numbers
+    // Split numbers from number type to a string
     stringNum = num.toString()
+    // create variable to hold the new calculation in
     let newCalc = 0;
-    // Loop through the single digit numbers
+    // Loop through the single digit numbers (which treats the string as an array i.e 234 has become [2,3,4])
     for(let i = 0; i < stringNum.length; i++) {
-        // Adds each single digit together, turns strings to number also
+        // Adds each single digit together to the same total i.e 2+3+4, turns string back to number type for calculation
         newCalc += Number(stringNum[i]);
         console.log('This is the new calc ' + newCalc);
     }
-    // Evaluate if the new calculation, back to a string is equal to a single digit
+    // Evaluate if the new calculation, back to a string to see if it is equal to a single digit
     if (newCalc.toString().length === 1) {
         console.log(newCalc);
         return newCalc;
     }
-    // If not, said the new calc to go through the same process, repeat until single digit
+    // If not, said the new calc to go through the same process, repeat until single digit 
     return addDigits(newCalc);
 };
 
